@@ -45,7 +45,7 @@ suspend fun parseJsonAddToCardList(jsonText:String): MutableList<Card> = withCon
 
     for(i in 0  until cardsArray.length()){
         val card = cardsArray.getJSONObject(i)
-        for(k in 0 until (card.optJSONArray("colors")?.length() ?: 0)) {
+        for(k in 0 until (card.optJSONArray("colors").length())) {
             cardList.add(
                 Card(
                     card.optString("name"),
